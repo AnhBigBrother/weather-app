@@ -7,14 +7,14 @@ import { WEATHER_API_KEY } from '../../API';
 const CurrentWeather = () => {
     const location = useSelector((store) => store.location);
     const city = useSelector((store) => store.cityName);
-    const [time, setTime] = useState();
-    const [weatherDescription, setWeatherDescription] = useState();
-    const [temp, setTemp] = useState();
-    const [weatherPathImg, setWeatherPathImg] = useState();
-    const [feelLike, setFeelLike] = useState();
-    const [humidity, setHumidity] = useState();
-    const [cloud, setCloud] = useState();
-    const [windSpeed, setWindSpeed] = useState();
+    const [time, setTime] = useState('');
+    const [weatherDescription, setWeatherDescription] = useState('');
+    const [temp, setTemp] = useState('');
+    const [weatherPathImg, setWeatherPathImg] = useState('');
+    const [feelLike, setFeelLike] = useState('');
+    const [humidity, setHumidity] = useState('');
+    const [cloud, setCloud] = useState('');
+    const [windSpeed, setWindSpeed] = useState('');
     useEffect(() => {
         if (location.length !== 0){
             fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${location[0]}&lon=${location[1]}&appid=${WEATHER_API_KEY}&units=metric`)
@@ -24,7 +24,7 @@ const CurrentWeather = () => {
                 setTime(d.toString().slice(0, 3) + "," + d.toString().slice(3, 15));
                 setTemp(Math.round(data.main.temp));
                 setWeatherDescription(data.weather[0].description.charAt(0).toUpperCase() + data.weather[0].description.slice(1));
-                setWeatherPathImg(`/weatherImages/${data.weather[0].icon}.png`);
+                setWeatherPathImg(`weatherImages/${data.weather[0].icon}.png`);
                 setFeelLike(data.main.feels_like);
                 setHumidity(data.main.humidity);
                 setCloud(data.clouds.all)
