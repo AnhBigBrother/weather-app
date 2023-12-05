@@ -41,8 +41,6 @@ const Forecast = () => {
                 .then(data => {
                     const x = data.list.filter((e, i) => i % 8 === 0);
                     setForecast(x);
-                    console.log('forecast = ')
-                    console.log(forecast)
                 })
         }
         const x = [{display: 'none'},{display: 'none'},{display: 'none'},{display: 'none'},{display: 'none'}];

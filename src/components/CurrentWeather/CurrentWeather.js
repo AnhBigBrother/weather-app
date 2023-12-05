@@ -24,12 +24,11 @@ const CurrentWeather = () => {
                 setTime(d.toString().slice(0, 3) + "," + d.toString().slice(3, 15));
                 setTemp(Math.round(data.main.temp));
                 setWeatherDescription(data.weather[0].description.charAt(0).toUpperCase() + data.weather[0].description.slice(1));
-                setWeatherPathImg(`weatherImages/${data.weather[0].icon}.png`);
+                setWeatherPathImg(`/weatherImages/${data.weather[0].icon}.png`);
                 setFeelLike(data.main.feels_like);
                 setHumidity(data.main.humidity);
                 setCloud(data.clouds.all)
                 setWindSpeed(data.wind.speed);
-                console.log(data)
             })
         }
     }, [location])
@@ -46,7 +45,7 @@ const CurrentWeather = () => {
                 </div>
             </div>
             <div id='right'>
-                <img alt='' src={weatherPathImg}></img>
+                <img alt='' src={weatherPathImg} />
                 <div id='detail'>
                     <div id='feelLike'>
                         <p>Feel Like:</p>

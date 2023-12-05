@@ -20,7 +20,6 @@ const Search = () => {
         else {setDisplayDropDown({display: "block"})}
         let timer = setTimeout(() => {
             const url = GEOGRAPHY_URL + `&namePrefix=${inputVal}`;
-            console.log("fetch: " + "url = " + url);
             fetch(url, GEOGRAPHY_API_OPTION)
                 .then((res) => res.json())
                 .then((data) => {
@@ -31,8 +30,6 @@ const Search = () => {
                         const newDropDownList = data.data.map((e, i) => <div key={i} className="dropdownItem" onClick={() => handleSelectLocation(i)}>{e.name}, {e.country}</div>)
                         location.current = data.data
                         setDropDownList(newDropDownList);
-                        console.log("location respone:");
-                        console.log(location.current);
                     }
                 })
                 .catch((err) => {console.log(err)});
@@ -45,7 +42,6 @@ const Search = () => {
         dispatch(cityNameAction(location.current[i].city));
         setInputVal("");
         setPlaceHolder(location.current[i].city + ", " + location.current[i].country);
-        console.log("chose: " + location.current[i].city + ", " + location.current[i].country)
     }
     return (
         <div id="search">
