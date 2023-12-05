@@ -1,0 +1,61 @@
+#CurrentWeather{
+    border-radius: 15px;
+    position: relative;
+    height: 250px;
+    width: 360px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background-color: #38393b;
+    box-shadow: 5px 5px 10px lightslategray;
+    color: white;
+}
+#left{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 120px;
+}
+#right{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+#location{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    position: absolute;
+    width: 150px;
+    height: 100px;
+    top: 25px
+}
+#description{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    bottom: 45px;
+}
+#detail{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+#feelLike, #humidity, #cloud, #windSpeed{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.img, img{
+    position: relative;
+    height: auto;
+    width: 150px;
+}
+@media only screen and (min-width: 960px) {
+    #CurrentWeather{
+        width: 400px;
+    }
+}
