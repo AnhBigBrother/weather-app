@@ -10,7 +10,7 @@ function App() {
       <Search />
       <CurrentWeather />
       <Forecast />
-      <a href='https://github.com/AnhBigBrother/weather-app' target='_blank'>by Big_Bro</a>
+      <a href='https://github.com/AnhBigBrother/weather-app' target='_blank'>by Tien_Anh_Tran</a>
     </div>
   );
 }

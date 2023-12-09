@@ -46,7 +46,7 @@ const Search = () => {
     return (
         <div id="search">
             <input id='searchInput' onChange={(e) => { setInputVal(e.target.value) }} 
-            value={inputVal} placeholder={placeHolder}></input>
+            value={inputVal} placeholder={placeHolder} title="Search by city name"></input>
             <div id='dropdown' style={displayDropDown}>{dropDownList}</div>
         </div>
     );
